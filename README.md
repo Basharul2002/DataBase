@@ -18,25 +18,28 @@ The database is structured to efficiently handle various aspects of a transporta
 
 ## 🗺️ ER Diagram
 
-![ER Diagram](path/to/your/er_diagram.png)
+![ER Diagram](assets/er_diagram.png)
 
 ## 📊 Schema Design
 
+![Schema Design](assets/schema_design.png)
+
+
 ### Tables Overview
 
-| Table Name                | Description                                                  |
-|---------------------------|--------------------------------------------------------------|
-| **Driver_Info**           | Stores driver details.                                      |
-| **Conductor_Info**        | Contains conductor information.                             |
-| **Supervisor_Info**       | Manages supervisor data.                                   |
-| **Company_Info**          | Holds transportation company information.                  |
-| **Bus_Info**              | Information about buses.                                   |
-| **Schedule**              | Manages bus schedules.                                     |
-| **Passenger_Info**        | Details about passengers.                                  |
-| **Payment**               | Payment transaction records.                               |
-| **Ticket**                | Ticketing information.                                     |
-| **Employee_Info**         | Data on company employees.                                 |
-| **Company_Employee_Mapping** | Links employees to companies.                          |
+| Table Name                   | Description                                                  |
+|------------------------------|--------------------------------------------------------------|
+| **Driver_Info**              | Stores driver details                                        |
+| **Conductor_Info**           | Contains conductor information                               |
+| **Supervisor_Info**          | Manages supervisor data                                      |
+| **Company_Info**             | Holds transportation company information                     |
+| **Bus_Info**                 | Information about buses                                      |
+| **Schedule**                 | Manages bus schedules                                        |
+| **Passenger_Info**           | Details about passengers                                     |
+| **Payment**                  | Payment transaction records                                  |
+| **Ticket**                   | Ticketing information                                        |
+| **Employee_Info**            | Data on company employees                                    |
+| **Company_Employee_Mapping** | Links employees to companies                                 |
 
 ## 💻 Queries
 
