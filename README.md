@@ -121,6 +121,11 @@ JOIN Driver_Address ON Driver_Info.Driver_Address_ID = Driver_Address.ID;
 SELECT * FROM Driver_Information;
 ```
 
+
+## 📚 Documentation
+
+For more details, please refer to the [Full Project Documentation (PDF)](assets/documentation.pdf) for an in-depth explanation of the database design, ER diagram, schema, and query use cases.
+
 ## 🎉 Conclusion
 
 This repository serves as a comprehensive resource for SQL queries used in managing and manipulating our transportation service database. Each query is meticulously crafted to enhance data handling across various tables.
