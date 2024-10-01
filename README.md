@@ -124,7 +124,20 @@ SELECT * FROM Driver_Information;
 
 ## 📚 Documentation
 
-For more details, please refer to the [Full Project Documentation (PDF)](assets/documentation.pdf) for an in-depth explanation of the database design, ER diagram, schema, and query use cases.
+For more in-depth details, please refer to the [Full Project Documentation (PDF)](assets/documentation.pdf), which covers the following sections:
+
+1. **Introduction**: Overview of the database project and its purpose in managing transportation services.
+2. **Scenario Description**: Description of the real-world scenario the database addresses, including the management of drivers, conductors, supervisors, passengers, and payment processing.
+3. **ER Diagram**: Visualization of the database's Entity-Relationship (ER) diagram, showcasing the relationships between various entities.
+4. **Normalization**: Explanation of the normalization process applied to ensure efficient data storage and reduce redundancy.
+5. **Schema Diagram**: Detailed schema diagram showing the structure of the database tables and their relationships.
+6. **Table Creation**: SQL commands used to create the necessary tables for storing data.
+7. **Data Insertion**: Sample SQL queries for inserting data into the tables.
+8. **Query Writing**: Examples of SQL queries for data retrieval, aggregation, and manipulation.
+9. **Relational Algebra**: Theoretical representation of queries using relational algebra to optimize data retrieval.
+10. **Conclusion**: Summary of the project's goals and achievements in creating an efficient bus ticket management system.
+
+
 
 ## 🎉 Conclusion
 
