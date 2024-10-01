@@ -1,4 +1,4 @@
--- Table Create
+-- Creating Tables 
 CREATE TABLE Driver_Info 
 (
   ID INT PRIMARY KEY,
@@ -38,6 +38,7 @@ CREATE TABLE Driver_Address
 );
 
 
+
 CREATE TABLE Conductor_Info 
 (
   ID INT PRIMARY KEY,
@@ -61,6 +62,7 @@ CREATE TABLE Conductor_DOB
   MONTH NUMBER(2) NOT NULL,
   YEAR NUMBER(4) NOT NULL
 );
+
 
 
 CREATE TABLE Conductor_Address 
@@ -91,7 +93,6 @@ CREATE TABLE Ticket
   FOREIGN KEY(Conductor_ID) REFERENCES Conductor_Info(ID),
   FOREIGN KEY(Passenger_ID) REFERENCES Passenger_Info(ID)
 );
-
 
 
 
@@ -140,6 +141,7 @@ CREATE TABLE Schedule
 );
 
 
+
 CREATE TABLE Supervisor_Info
 (
   ID INT PRIMARY KEY,
@@ -180,7 +182,6 @@ CREATE TABLE Supervisor_Address
 
 
 
-
 CREATE TABLE Company_Info
 (
   ID INT PRIMARY KEY,
@@ -188,7 +189,6 @@ CREATE TABLE Company_Info
   Comapnay_Address_ID INT NOT NULL,
   FOREIGN KEY(Comapnay_Address_ID) REFERENCES Company_Address(ID)
 );
-
 
 
 
@@ -225,13 +225,7 @@ CREATE TABLE Company_Employee_Mapping
 
 
 
-
-
-
-
-
 -- Squences
-
 CREATE SEQUENCE Driver_DOB_ID
    INCREMENT BY 1
    START WITH 1
@@ -255,6 +249,7 @@ CREATE SEQUENCE Conductor_DOB_ID
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Conductor_Address_ID
    INCREMENT BY 1
    START WITH 1
@@ -269,6 +264,7 @@ CREATE SEQUENCE Supervisor_DOB_ID
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Supervisor_Address_ID
    INCREMENT BY 1
@@ -317,12 +313,14 @@ CREATE SEQUENCE Bus_Info_ID
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Schedule_ID_fk1
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Company_Info_ID_fk1
    INCREMENT BY 1
@@ -331,12 +329,14 @@ CREATE SEQUENCE Company_Info_ID_fk1
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Driver_Info_ID
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Bus_Info_ID_fk1
    INCREMENT BY 1
@@ -345,12 +345,14 @@ CREATE SEQUENCE Bus_Info_ID_fk1
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Driver_DOB_ID_fk1
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Driver_Address_ID_fk1
    INCREMENT BY 1
@@ -359,12 +361,14 @@ CREATE SEQUENCE Driver_Address_ID_fk1
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Conductor_Info_ID
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Bus_Info_ID_fk2
    INCREMENT BY 1
@@ -373,6 +377,7 @@ CREATE SEQUENCE Bus_Info_ID_fk2
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Conductor_DOB_ID_fk1
    INCREMENT BY 1
    START WITH 1
@@ -380,12 +385,14 @@ CREATE SEQUENCE Conductor_DOB_ID_fk1
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Conductor_Address_ID_fk1
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Passenger_Info_ID
    INCREMENT BY 1
@@ -402,12 +409,14 @@ CREATE SEQUENCE Bus_Info_ID_fk3
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Pay_Info_ID
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Passenger_Info_ID_fk1
    INCREMENT BY 1
@@ -417,13 +426,13 @@ CREATE SEQUENCE Passenger_Info_ID_fk1
    NOCYCLE;
 
 
-
 CREATE SEQUENCE Ticket_ID
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Conductor_Info_ID_fk1
    INCREMENT BY 1
@@ -432,12 +441,14 @@ CREATE SEQUENCE Conductor_Info_ID_fk1
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Passenger_Info_ID_fk2
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Supervisor_Info_ID
    INCREMENT BY 1
@@ -446,6 +457,7 @@ CREATE SEQUENCE Supervisor_Info_ID
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Supervisor_DOB_ID_fk1
    INCREMENT BY 1
    START WITH 1
@@ -453,12 +465,14 @@ CREATE SEQUENCE Supervisor_DOB_ID_fk1
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Supervisor_Address_ID_fk1
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 CREATE SEQUENCE Bus_Info_ID_fk4
    INCREMENT BY 1
@@ -483,12 +497,14 @@ CREATE SEQUENCE Company_Info_ID_fk2
    NOCACHE
    NOCYCLE;
 
+
 CREATE SEQUENCE Employee_Info_ID_fk1
    INCREMENT BY 1
    START WITH 1
    MAXVALUE 1000
    NOCACHE
    NOCYCLE;
+
 
 
 
@@ -628,8 +644,6 @@ INSERT INTO Supervisor_Address (ID, STREET_NUM, STREET_NAME, APARTMENT_NUM, APAR
 
 
 
-
-
 INSERT INTO Company_Address (ID, STREET_NUM, STREET_NAME, CITY, COUNTRY) 
                     VALUES (Company_Address_ID.NEXTVAL, 82, 'Unter den Linden', 'Berlin',  'Germany');
 
@@ -703,7 +717,6 @@ INSERT INTO Schedule (ID, DEPARTURE_TIME, DESTINATION)
 
 
 
-
 INSERT INTO Bus_Info (BUS_NUM, ROUTE, CAPACITY, Schedule_ID, Compnay_ID) 
               VALUES (1001, 'Berlin-Munich', 57, Schedule_ID_fk1.NEXTVAL, Company_Info_ID_fk1.NEXTVAL);
 
@@ -719,12 +732,15 @@ INSERT INTO Bus_Info (BUS_NUM, ROUTE, CAPACITY, Schedule_ID, Compnay_ID)
 INSERT INTO Bus_Info (BUS_NUM, ROUTE, CAPACITY, Schedule_ID, Compnay_ID) 
               VALUES (1005, 'Bristol-Glasgow', 52, Schedule_ID_fk1.NEXTVAL, Company_Info_ID_fk1.NEXTVAL);
 
-
 INSERT INTO Bus_Info (BUS_NUM, ROUTE, CAPACITY, Schedule_ID, Compnay_ID) 
               VALUES (1006, 'Liverpool-Newcastle', 52, Schedule_ID_fk1.NEXTVAL, Company_Info_ID_fk1.NEXTVAL);
 
 INSERT INTO Bus_Info (BUS_NUM, ROUTE, CAPACITY, Schedule_ID, Compnay_ID) 
               VALUES (1007, 'New York City, NY-Miami, FL', 52, Schedule_ID_fk1.NEXTVAL, Company_Info_ID_fk1.NEXTVAL);
+
+
+
+
 
 INSERT INTO Driver_Info (ID, NAME, PHN_NUM1, PHN_NUM2, BUS_NUM, Driver_DOB_ID, Driver_Address_ID) 
                  VALUES (Driver_Info_ID.NEXTVAL, 'Nazmul Hasan Pappon', '01827-9068', NULL, 1001, Driver_DOB_ID_fk1.NEXTVAL, Driver_Address_ID_fk1.NEXTVAL);
@@ -738,18 +754,14 @@ INSERT INTO Driver_Info (ID, NAME, PHN_NUM1, PHN_NUM2, BUS_NUM, Driver_DOB_ID, D
 INSERT INTO Driver_Info (ID, NAME, PHN_NUM1, PHN_NUM2, BUS_NUM, Driver_DOB_ID, Driver_Address_ID) 
                  VALUES (Driver_Info_ID.NEXTVAL, 'Mashrafi Bin Mortaza', '01787-2589', NULL, 1004, Driver_DOB_ID_fk1.NEXTVAL, Driver_Address_ID_fk1.NEXTVAL);
 
-
 INSERT INTO Driver_Info (ID, NAME, PHN_NUM1, PHN_NUM2, BUS_NUM, Driver_DOB_ID, Driver_Address_ID) 
                  VALUES (Driver_Info_ID.NEXTVAL, 'Lional Messi', '01998-2281', NULL, 1005, Driver_DOB_ID_fk1.NEXTVAL, Driver_Address_ID_fk1.NEXTVAL);
-
 
 INSERT INTO Driver_Info (ID, NAME, PHN_NUM1, PHN_NUM2, BUS_NUM, Driver_DOB_ID, Driver_Address_ID) 
                  VALUES (Driver_Info_ID.NEXTVAL, 'Cristiano Ronaldo', '01428-9182', NULL, 1006, Driver_DOB_ID_fk1.NEXTVAL, Driver_Address_ID_fk1.NEXTVAL);
 
-
 INSERT INTO Driver_Info (ID, NAME, PHN_NUM1, PHN_NUM2, BUS_NUM, Driver_DOB_ID, Driver_Address_ID) 
                  VALUES (Driver_Info_ID.NEXTVAL, 'Karim Benzema', '01327-8738', NULL, 1007, Driver_DOB_ID_fk1.NEXTVAL, Driver_Address_ID_fk1.NEXTVAL);
-
 
 
 
@@ -876,6 +888,9 @@ INSERT INTO Supervisor_Info (ID, NAME, PHN_NUM1, PHN_NUM2, Supervisor_DOB_ID, Su
                      VALUES (Supervisor_Info_ID.NEXTVAL, 'D. Tramp', '01782-898657', '01795-790561', Supervisor_DOB_ID_fk1.NEXTVAL, Supervisor_Address_ID_fk1.NEXTVAL, 1004);
 
 
+
+
+
 INSERT INTO Employee_Info (ID, NAME, TYPE) 
                     VALUES(Employee_Info_ID.NEXTVAL, 'Elon Musk', 'MANAGER');
 
@@ -896,6 +911,9 @@ INSERT INTO Employee_Info (ID, NAME, TYPE)
 
 INSERT INTO Employee_Info (ID, NAME, TYPE) 
                     VALUES(Employee_Info_ID.NEXTVAL, 'Vladimir Vladimirovich Putin', 'Operation Engineer');
+
+
+
 
 
 INSERT INTO Company_Employee_Mapping(Company_ID, Employee_ID) 
@@ -923,8 +941,9 @@ INSERT INTO Company_Employee_Mapping(Company_ID, Employee_ID)
 
 
 
--- Group Function
 
+
+-- Group Function
 SELECT BUS_NUM, COUNT(*) AS Conductor_Count
 FROM Conductor_Info
 GROUP BY BUS_NUM;
@@ -938,8 +957,8 @@ HAVING SUM(TOTAL_PRICE) > 100;
 
 
 
+
 -- Sub query
-1.
 SELECT ID, NAME, PHN_NUM1 AS "PHONE NUMBER", 
        (SELECT TO_CHAR(TO_DATE(MONTH||'/'||DAY||'/'||YEAR,'MM/DD/YYYY'),'Month DD, YYYY')
         FROM Conductor_DOB
@@ -950,7 +969,7 @@ SELECT ID, NAME, PHN_NUM1 AS "PHONE NUMBER",
 FROM Conductor_Info;
 
 
-2. 
+
 SELECT Employee_Info.ID, Employee_Info.NAME, Employee_Info.TYPE
 FROM Employee_Info
 WHERE Employee_Info.ID IN 
@@ -981,19 +1000,17 @@ WHERE S1.Supervisor_Address_ID = S2.ID;
 
 
 -- View
-1)
 CREATE VIEW Driver_Information AS 
 SELECT Driver_Info.NAME, Driver_Info.PHN_NUM1, Driver_Info.PHN_NUM2, Driver_DOB.DAY, Driver_DOB.MONTH, Driver_DOB.YEAR, Driver_Address.STREET_NUM, Driver_Address.STREET_NAME, Driver_Address.APARTMENT_NUM, Driver_Address.APARTMENT_NAME, Driver_Address.CITY, Driver_Address.COUNTRY, Driver_Address.ZIP_CODE
 FROM Driver_Info
 INNER JOIN Driver_DOB ON Driver_Info.Driver_DOB_ID = Driver_DOB.ID
 INNER JOIN Driver_Address ON Driver_Info.Driver_Address_ID = Driver_Address.ID;
 
-
 SELECT * from Driver_Information;
 
 
 
-2)
+
 CREATE VIEW Conductor_Information AS 
 SELECT Conductor_Info.NAME, Conductor_Info.PHN_NUM1, Conductor_Info.PHN_NUM2, Conductor_DOB.DAY, Conductor_DOB.MONTH, Conductor_DOB.YEAR, 
  Conductor_Address.STREET_NUM, Conductor_Address.STREET_NAME, Conductor_Address.APARTMENT_NUM, Conductor_Address.APARTMENT_NAME, Conductor_Address.CITY, Conductor_Address.COUNTRY, Conductor_Address.ZIP_CODE
@@ -1006,7 +1023,6 @@ SELECT * from Conductor_Information;
 
 
 
-3)
 CREATE VIEW Supervisor_Information AS 
 SELECT Supervisor_Info.NAME, Supervisor_Info.PHN_NUM1, Supervisor_Info.PHN_NUM2, Supervisor_DOB.DAY, Supervisor_DOB.MONTH, Supervisor_DOB.YEAR, 
  Supervisor_Address.STREET_NUM, Supervisor_Address.STREET_NAME, Supervisor_Address.APARTMENT_NUM, Supervisor_Address.APARTMENT_NAME, Supervisor_Address.CITY, Supervisor_Address.COUNTRY, Supervisor_Address.ZIP_CODE
